@@ -36,7 +36,7 @@ This is a solution to the [News homepage challenge on Frontend Mentor](https://w
 
 ### 링크
 
-- [챌린지 업로드 사이트](https://your-solution-url.com)
+- [챌린지 업로드 사이트](https://www.frontendmentor.io/solutions/19th-challenge-news-webpage-that-used-react-and-styledcomponents-hCzv--6Z76)
 - [구현된 챌린지 사이트](https://drunkenneoguri.github.io/newswebpagechallenge/)
 
 ## 작업 사항
