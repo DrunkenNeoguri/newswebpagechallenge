@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/newswebpagechallenge/static/css/main.2254691f.css",
-    "main.js": "/newswebpagechallenge/static/js/main.8cdecf1c.js",
+    "main.css": "/newswebpagechallenge/static/css/main.76bf16aa.css",
+    "main.js": "/newswebpagechallenge/static/js/main.0a4f03c8.js",
     "static/media/image-web-3-desktop.jpg": "/newswebpagechallenge/static/media/image-web-3-desktop.988d05305d18140f188c.jpg",
     "static/media/image-web-3-mobile.jpg": "/newswebpagechallenge/static/media/image-web-3-mobile.aff7a393740bc26b3651.jpg",
     "static/media/image-retro-pcs.jpg": "/newswebpagechallenge/static/media/image-retro-pcs.4ecb8a36b05f012297a6.jpg",
@@ -9,11 +9,11 @@
     "index.html": "/newswebpagechallenge/index.html",
     "static/media/icon-menu-close.svg": "/newswebpagechallenge/static/media/icon-menu-close.ca20d86e8364ad748c947025ef771994.svg",
     "static/media/icon-menu.svg": "/newswebpagechallenge/static/media/icon-menu.f967d833be0e64002eeaadab0bae9ac5.svg",
-    "main.2254691f.css.map": "/newswebpagechallenge/static/css/main.2254691f.css.map",
-    "main.8cdecf1c.js.map": "/newswebpagechallenge/static/js/main.8cdecf1c.js.map"
+    "main.76bf16aa.css.map": "/newswebpagechallenge/static/css/main.76bf16aa.css.map",
+    "main.0a4f03c8.js.map": "/newswebpagechallenge/static/js/main.0a4f03c8.js.map"
   },
   "entrypoints": [
-    "static/css/main.2254691f.css",
-    "static/js/main.8cdecf1c.js"
+    "static/css/main.76bf16aa.css",
+    "static/js/main.0a4f03c8.js"
   ]
 }
