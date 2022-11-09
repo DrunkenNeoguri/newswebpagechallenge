@@ -9,14 +9,31 @@ import TopicArticleDesktopImage from "./images/image-web-3-desktop.jpg";
 import popluarArticleImage01 from "./images/image-retro-pcs.jpg";
 import popluarArticleImage02 from "./images/image-top-laptops.jpg";
 import popluarArticleImage03 from "./images/image-gaming-growth.jpg";
+import { useEffect } from "react";
 
 function App() {
   const [menuState, setMenuState] = useState(false);
+  const [viewWidth, setViewWidth] = useState(window.innerWidth);
 
+  // window width resize check
+  useEffect(() => {
+    const setWindowWidthResize = () => {
+      setViewWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", setWindowWidthResize);
+
+    return () => {
+      window.removeEventListener("resize", setWindowWidthResize);
+    };
+  }, []);
+
+  // open/close menu bar when the screen is mobile size
   const changeToAsideMenuBarState = () => {
     setMenuState(!menuState);
   };
 
+  // no refresh when user clicked button
   const clickToMovePage = (event) => {
     event.preventDefault();
   };
@@ -113,15 +130,26 @@ function App() {
         <ArticleSection>
           <TopicArticle>
             <figure>
-              <img src={TopicArticleMobileImage} alt="" />
+              <img
+                src={
+                  viewWidth < 640
+                    ? TopicArticleMobileImage
+                    : TopicArticleDesktopImage
+                }
+                alt=""
+              />
             </figure>
-            <h1>The Bright Future of Web 3.0?</h1>
-            <p>
-              We dive into the next evolution of the web that claims to put the
-              power of the platforms back into the hands of the people. But is
-              it really fulfilling its promise?
-            </p>
-            <button>Read more</button>
+            <div>
+              <h1>The Bright Future of Web 3.0?</h1>
+              <div>
+                <p>
+                  We dive into the next evolution of the web that claims to put
+                  the power of the platforms back into the hands of the people.
+                  But is it really fulfilling its promise?
+                </p>
+                <button>Read more</button>
+              </div>
+            </div>
           </TopicArticle>
           <NewestArticle>
             <h2>New</h2>
@@ -201,6 +229,8 @@ function App() {
 
 export default App;
 
+// website innerwidth check
+
 // styled-components
 
 // header
@@ -213,6 +243,12 @@ const Header = styled.header`
 
   padding: 2rem 1rem;
   box-sizing: border-box;
+
+  @media screen and (min-width: 1124px) {
+    max-width: 1110px;
+    padding: 2rem 0;
+    margin: 0 auto;
+  }
 `;
 
 const MenuBtn = styled.button`
@@ -234,7 +270,7 @@ const MenuBtn = styled.button`
     }
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 1124px) {
     display: none;
   }
 `;
@@ -242,8 +278,27 @@ const MenuBtn = styled.button`
 const HeaderNav = styled.nav`
   display: none;
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 1124px) {
     display: flex;
+    gap: 2rem;
+    & > a {
+      display: inline-block;
+
+      font-size: 1rem;
+      font-weight: 400;
+      text-decoration: none;
+      color: var(--dark--grayish--blue);
+
+      margin: 1rem;
+      margin-right: auto;
+
+      cursor: pointer;
+
+      transition: 0.05s ease;
+    }
+    & > a:hover {
+      color: var(--soft--red);
+    }
   }
 `;
 
@@ -260,7 +315,7 @@ const AsideMenuBar = styled.aside`
   top: 0;
   z-index: 3;
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 1124px) {
     display: none;
   }
 `;
@@ -338,6 +393,17 @@ const ArticleSection = styled.section`
   display: flex;
   flex-direction: column;
   padding: 1rem;
+
+  @media screen and (min-width: 1124px) {
+    max-width: 1110px;
+    display: grid;
+    grid-template-columns: 730px 350px;
+    gap: 2rem;
+    margin: 0 auto;
+    & > article:nth-child(3) {
+      grid-column: -1 / -3;
+    }
+  }
 `;
 
 // Topic Article
@@ -392,6 +458,34 @@ const TopicArticle = styled.article`
       background: var(--very--dark--blue);
     }
   }
+
+  @media screen and (min-width: 1124px) {
+    margin: 0;
+    & > div {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-around;
+      margin-top: 1rem;
+      gap: 1rem;
+    }
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    & > div > div {
+      display: flex;
+      flex-direction: column;
+      max-width: 350px;
+      height: 210px;
+    }
+
+    button {
+      margin-top: auto;
+      margin-right: auto;
+    }
+  }
 `;
 
 // Newest Article
@@ -427,6 +521,18 @@ const NewestArticle = styled.article`
     color: var(--grayish--blue);
     font-size: 1rem;
     line-height: 1.8rem;
+  }
+
+  @media screen and (min-width: 1124px) {
+    margin: 0;
+    padding: 2rem 1.75rem 0.5rem 1.75rem;
+
+    & > h2 {
+      font-size: 2.5rem;
+    }
+    & > div {
+      padding: 0.5rem 0;
+    }
   }
 `;
 
@@ -480,6 +586,33 @@ const PoplularArticle = styled.article`
         padding-right: 1rem;
 
         margin: 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1124px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.5rem;
+    max-width: 75rem;
+
+    & > div {
+      gap: 1.5rem;
+      & > figure {
+        margin: 0;
+        width: 100px;
+        & > img {
+          width: 100px;
+          height: 100%;
+          vertical-align: bottom;
+        }
+      }
+      & > div {
+        max-width: 15rem;
+        & > p {
+          padding-right: 1.5rem;
+        }
       }
     }
   }
