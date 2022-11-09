@@ -31,6 +31,7 @@ This is a solution to the [News homepage challenge on Frontend Mentor](https://w
 ![Desktop Version](./demo/desktop-screen.jpg)
 
 **모바일 버전**
+
 ![Mobile Version](./demo/mobile-screen.jpg)
 
 ### 링크
@@ -119,6 +120,7 @@ keyframe을 이용하면 화면에 출력되는 UI/UX의 애니메이션 처리�
 
   import와 export를 적절하게 이용함으로서 styled-components에 사용할 keyframes를 여기저기에 컴포넌트처럼 사용할 수 있다.
   구현된 결과는 아래와 같다.
+
   ![GIF 2022-11-09 오후 5-37-21.gif](./demo/demo-first-solved.gif)
 
 2️⃣ **grid 방식의 cell 병합 방법**
